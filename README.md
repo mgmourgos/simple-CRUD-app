@@ -1,4 +1,4 @@
-### Install commands that I have typed
+### Install commands
 
 npm i -S express
 
