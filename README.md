@@ -16,6 +16,8 @@ npm i -D css-loader style-loader sass-loader node-sass autoprefixer-loader
 npm i -S bootstrap-sass jquery
 npm i -D bootstrap-loader url-loader file-loader resolve-url-loader imports-loader
 
+npm i -S lodash
+
 ### Other notes
 
 https://www.youtube.com/watch?annotation_id=annotation_329112091&feature=iv&src_vid=kHV7gOHvNdk&v=6Sbau-oE37w
