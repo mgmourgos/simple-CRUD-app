@@ -18,10 +18,31 @@
     </tr>
     <tr ng-repeat="todo in todos">
       <td><input type="checkbox" ng-checked="todo.isCompleted" ng-click="onCompletedClick(todo)"/></td>
-      <td><span class="todos__task" ng-class="{'todos__task--completed': todo.isCompleted}">{{todo.task}}</span></td>
       <td>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+        <span ng-if="!todo.isEditing"
+              class="todos__task"
+              ng-class="{'todos__task--completed': todo.isCompleted}">{{todo.task}}
+        </span>
+
+        <form ng-submit="updateTask(todo)">
+          <input ng-if="todo.isEditing"
+                 class="form-control todos__update-input"
+                 ng-value="todo.task" ng-model="todo.updatedTask" />
+        </form>
+      </td>
+      <td>
+        <button ng-if="!todo.isEditing"
+                class="btn btn-info"
+                ng-click="onEditClick(todo)">Edit</button>
+        <button ng-if="!todo.isEditing"
+                class="btn btn-danger">Delete</button>
+
+        <button ng-if="todo.isEditing"
+                class="btn btn-primary"
+                ng-click="updateTask(todo)">Save</button>
+        <button ng-if="todo.isEditing"
+                class="btn btn-default"
+                ng-click="onCancelClick(todo)">Cancel</button>
       </td>
     </tr>
   </table>

@@ -6,17 +6,33 @@ export default function($scope) {
   $scope.todos = [
     {
       task: 'do dishes',
-      isCompleted: false
+      isCompleted: false,
+      isEditing: false
     },
     {
       task: 'walk the dog',
-      isCompleted: true
+      isCompleted: true,
+      isEditing:false
     }
   ];
 
   $scope.onCompletedClick = (todo) => {
     todo.isCompleted = !todo.isCompleted;
   };
+
+  $scope.onEditClick = (todo) => {
+    todo.isEditing = true;
+  };
+
+  $scope.updateTask = (todo) => {
+    todo.task = todo.updatedTask;
+    todo.isEditing = false;
+
+  }
+
+  $scope.onCancelClick = (todo) => {
+    todo.isEditing = false;
+  }
 
   $scope.createTask = () => {
     params.createHasInput = false;
