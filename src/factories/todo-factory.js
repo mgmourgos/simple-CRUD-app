@@ -3,19 +3,54 @@ import angular from 'angular';
 
 const todoFactory = angular.module('app.todoFactory', [])
 
-.factory('todoFactory', () => {
-  function createTask($scope, params) {
-    params.createHasInput = false;
-    $scope.createTaskInput = '';
+//front-end todo factory, features resful API calls
+//  to modify the database
+
+.factory('todoFactory', ($http) => {
+
+  function getTasks($scope) {
+    $http.get('/todos').success(response => {
+      $scope.todos = response.todos;
+    });
   }
 
-  function updateTask(todo) {
-    todo.task = todo.updatedTask;
-    todo.isEditing = false;
+  function createTask($scope, params) {
+    //if taskInput is empty dont update
+    if (!$scope.createTaskInput) {
+      return;
+    }
+
+    $http.post('/todos', {
+      task: $scope.createTaskInput,
+      isCompleted: false,
+      isEditing: false
+    }).success(response => {
+      getTasks($scope);
+      $scope.createTaskInput = '';
+      //console.log(response);
+    });
+
+    //params.createHasInput = false;
+    //$scope.createTaskInput = '';
+  }
+
+  function updateTask($scope, todo) {
+    $http.put('/todos/' + todo._id, {
+      task: todo.updatedTask
+    }).success(response => {
+      getTasks($scope);
+      todo.isEditing = false;
+    });
+    // todo.task = todo.updatedTask;
+    // todo.isEditing = false;
   }
 
   function deleteTask($scope, todoToDelete) {
-      _.remove($scope.todos, todo => todo.task === todoToDelete.task)
+      //_.remove($scope.todos, todo => todo.task === todoToDelete.task)
+      $http.delete('/todos/' + todoToDelete._id )
+           .success(res => {
+              getTasks($scope);
+           });
   }
 
   function watchCreateTaskInput($scope, params, val) {
@@ -53,7 +88,8 @@ const todoFactory = angular.module('app.todoFactory', [])
     watchCreateTaskInput,
     onEditClick,
     onCancelClick,
-    onCompletedClick
+    onCompletedClick,
+    getTasks
   };
 });
 

@@ -18,6 +18,21 @@ npm i -D bootstrap-loader url-loader file-loader resolve-url-loader imports-load
 
 npm i -S lodash
 
+npm i -S mongoose kerberos body-parser
+
+###npm argument reference
+
+-S: Package will appear in  dependencies
+-D: Package will appear in devDependencies
+-g: Installs package as global package
+
+###To run app
+
+Locally Type
+-npm run dev
+-mongod
+
+
 ### Other notes
 
 https://www.youtube.com/watch?annotation_id=annotation_329112091&feature=iv&src_vid=kHV7gOHvNdk&v=6Sbau-oE37w
@@ -26,3 +41,5 @@ Because of babel all js files in ./src use ES6
   (including config.js)
 
 config.js contains angular routing settings
+
+This simple app uses a localhost mongodb database;

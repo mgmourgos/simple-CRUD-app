@@ -1,7 +1,13 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+var routes = require('server/routes');
 
 var PORT = process.env.PORT || 3000;
+
+app.use(bodyParser.json());
+
+routes(app);
 
 app.get('/home', (req, res) => {
   res.send('<h1>~`~Home Home Home ``~~</h1>');
