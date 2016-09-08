@@ -79,6 +79,12 @@ const todoFactory = angular.module('app.todoFactory', [])
 
   function onCompletedClick(todo) {
       todo.isCompleted = !todo.isCompleted;
+      $http.put('/todos/' + todo._id, {
+        task: todo.task,
+        isCompleted: todo.isCompleted
+      }).success(response => {
+      });
+
   }
 
   return {

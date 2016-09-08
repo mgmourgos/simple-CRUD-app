@@ -28,13 +28,15 @@ router.put('/:id', (req, res) => {
   var id = req.params.id;
   Todo.update(
         { _id: id },
-        { $set: {task: req.body.task} },
+        { $set: {task: req.body.task,
+                 isCompleted: req.body.isCompleted} },
         (err) => {
           if (err) { console.log(err); }
           res.send('Todo updated');
         });
 });
 
+//delete item from db with id == _id
 router.delete('/:id', (req, res) => {
   var id = req.params.id;
   Todo.remove({_id: id}, (err) => {
