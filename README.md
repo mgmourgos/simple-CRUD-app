@@ -1,4 +1,10 @@
-### Install commands
+##To run app
+
+For development (all local):<br/>
+- npm run dev
+- mongod
+
+## Install commands
 
 npm i -S express
 
@@ -20,20 +26,13 @@ npm i -S lodash
 
 npm i -S mongoose kerberos body-parser
 
-###npm argument reference
+##npm argument reference
 
--S: Package will appear in  dependencies
--D: Package will appear in devDependencies
--g: Installs package as global package
+- -S: Package will appear in  dependencies<br/>
+- -D: Package will appear in devDependencies<br/>
+- -g: Installs package as global package
 
-###To run app
-
-Locally Type
--npm run dev
--mongod
-
-
-### Other notes
+## Other notes
 
 https://www.youtube.com/watch?annotation_id=annotation_329112091&feature=iv&src_vid=kHV7gOHvNdk&v=6Sbau-oE37w
 
