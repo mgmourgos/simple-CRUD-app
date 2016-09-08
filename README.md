@@ -4,7 +4,7 @@ For development (all local):<br/>
 - npm run dev
 - mongod
 
-## Install commands
+## Install commands (for reference)
 
 npm i -S express
 
