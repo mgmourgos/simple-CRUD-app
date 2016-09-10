@@ -4,6 +4,8 @@ For development (all local):<br/>
 - npm run dev
 - mongod
 
+goto url: localhost:8080
+
 ## Install commands (for reference)
 
 npm i -S express
