@@ -6,6 +6,11 @@ For development (all local):<br/>
 
 goto url: localhost:8080
 
+## Setup
+
+- Download this repo into a folder
+- run 'npm install' to install dependencies
+
 ## Install commands (for reference)
 
 npm i -S express
