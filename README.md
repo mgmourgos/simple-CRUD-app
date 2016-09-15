@@ -39,6 +39,11 @@ npm i -S mongoose kerberos body-parser
 - -D: Package will appear in devDependencies<br/>
 - -g: Installs package as global package
 
+## Todo
+
+ - Add 'date' field for each todo element
+ - Change view to display todos sorted by date
+
 ## Other notes
 
 https://www.youtube.com/watch?annotation_id=annotation_329112091&feature=iv&src_vid=kHV7gOHvNdk&v=6Sbau-oE37w
