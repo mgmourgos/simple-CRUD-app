@@ -46,8 +46,6 @@ npm i -S mongoose kerberos body-parser
 
 ## Other notes
 
-https://www.youtube.com/watch?annotation_id=annotation_329112091&feature=iv&src_vid=kHV7gOHvNdk&v=6Sbau-oE37w
-
 Because of babel all js files in ./src use ES6
   (including config.js)
 

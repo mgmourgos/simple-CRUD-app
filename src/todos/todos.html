@@ -3,16 +3,24 @@
   <h2>ToDo App</h2>
 
   <form ng-submit="createTask()">
-    <input class="form-control todos__create-input"
-           placeholder="What do I need to do"
-           ng-model="createTaskInput"/>
-    <button class ="btn btn-success todos__create-button">
-      Create Task
-    </button>
+    <center>
+      <input class="form-control todos__create-input"
+             placeholder="Date"
+             type="date"
+             ng-model="createTaskDate">
+      <input class="form-control todos__create-input"
+             placeholder="What do I need to do"
+             ng-model="createTaskInput"/>
+
+      <button class ="btn btn-success todos__create-button">
+        Create Task
+      </button>
+    </center>
   </form>
   <table class="table table-striped">
     <tr>
       <th>Completed?</th>
+      <th>Date</th>
       <th>Task</th>
       <th>Actions</th>
     </tr>
@@ -21,6 +29,9 @@
         <input type="checkbox"
               ng-checked="todo.isCompleted"
               ng-click="onCompletedClick(todo)"/>
+      </td>
+      <td>
+          <p>{{todo.date}}</p>
       </td>
       <td>
         <span ng-if="!todo.isEditing"

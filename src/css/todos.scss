@@ -2,10 +2,18 @@
   &__create-input {
       margin: 0 auto 5px;
       width: 300px;
+      display: inline-block;
+      align-content: center;
+  }
+  &__set-date {
+      margin: 0 auto 5px;
+      width: 200px;
+      display: inline-block;
+      align-content: center;
   }
   &__create-button {
-      display: block;
-      margin: 0 auto 20px;
+      display: inline;
+      margin: 0 auto 5px;
   }
   &__task {
     &--completed {
