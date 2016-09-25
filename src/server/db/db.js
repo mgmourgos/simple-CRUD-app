@@ -7,6 +7,7 @@ mongoose.connect('mongodb://localhost/todos');
 //define schema
 var Todo = mongoose.model('Todo', {
   task: String,
+  date: Date,
   isCompleted: Boolean,
   isEditing: Boolean
 });

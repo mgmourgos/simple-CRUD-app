@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   var todo = new Todo(req.body);
+  //console.log(todo)
   todo.save((err) => {
     if (err) { console.log(err); }
     res.send('Successfully added new todo');

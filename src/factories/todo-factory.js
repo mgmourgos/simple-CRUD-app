@@ -23,11 +23,13 @@ const todoFactory = angular.module('app.todoFactory', [])
 
     $http.post('/todos', {
       task: $scope.createTaskInput,
+      date: $scope.createTaskDate,
       isCompleted: false,
       isEditing: false
     }).success(response => {
       getTasks($scope);
-      $scope.createTaskInput = '';
+      $scope.createTaskInput = ''
+      $scope.createTaskDate = ''
       //console.log(response);
     });
 

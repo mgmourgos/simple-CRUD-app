@@ -24,14 +24,14 @@
       <th>Task</th>
       <th>Actions</th>
     </tr>
-    <tr ng-repeat="todo in todos">
+    <tr ng-repeat="todo in todos | orderBy: 'date'">
       <td>
         <input type="checkbox"
               ng-checked="todo.isCompleted"
               ng-click="onCompletedClick(todo)"/>
       </td>
       <td>
-          <p>{{todo.date}}</p>
+          <p>{{todo.date | date: 'mediumDate'}}</p>
       </td>
       <td>
         <span ng-if="!todo.isEditing"
