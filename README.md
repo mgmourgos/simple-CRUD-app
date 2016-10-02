@@ -41,8 +41,7 @@ npm i -S mongoose kerberos body-parser
 
 ## Todo
 
- - Add 'date' field for each todo element
- - Change view to display todos sorted by date
+ - Allow editing and updating of 'date' field using edit button
 
 ## Other notes
 
