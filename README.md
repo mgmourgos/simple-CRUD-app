@@ -1,4 +1,4 @@
-##To run app
+## To run app
 
 For development (all local):<br/>
 - npm run dev
@@ -33,7 +33,7 @@ npm i -S lodash
 
 npm i -S mongoose kerberos body-parser
 
-##npm argument reference
+## npm argument reference
 
 - -S: Package will appear in  dependencies<br/>
 - -D: Package will appear in devDependencies<br/>
